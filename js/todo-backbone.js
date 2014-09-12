@@ -31,7 +31,7 @@ app.TodoItemView = Backbone.View.extend({
 	
 	tagName : "li",
 	
-	className : "list-item",
+	className : "item",
 	
 	template : _.template($("#todo-item-template").html()),
 	
@@ -43,7 +43,7 @@ app.TodoItemView = Backbone.View.extend({
 });
 
 
-app.ListView = Backbone.View.extend({
+app.TodoListView = Backbone.View.extend({
 	el : "#list",
 	
 	initialize : function() {
@@ -57,20 +57,32 @@ app.ListView = Backbone.View.extend({
 	},
 	
 	events : {
-		'keypress #new-item-input' : 'createTodoOnEnter'
+		'keypress #new-item-input' : 'createOnEnter'
+		'click #new-item-button' : 'createOnClick'
 	},
 	
-	createTodoOnEnter : function(e) {
+	createOnEnter : function(e) {
 		if(e.which !== 13 || !this.input.val().trim()) {
 			return;
 		}
 		
-		app.todoList.create({ title : this.input.val().trim() });
+		this.createItem();
+	},
+	
+	createOnClick : function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		
+		this.createItem();
+	},
+	
+	createItem : function() {
+		app.todoList.create({title : this.input.val().trim() });
 		this.input.val('');
 	},
 	
 	add : function(item) {
-		var view = new app.TodoItemView({ model : todo });
+		var view = new app.TodoItemView({ model : item });
 		this.$el.append(view.render().el);
 	},
 	
