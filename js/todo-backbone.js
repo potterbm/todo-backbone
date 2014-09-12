@@ -27,7 +27,7 @@ app.todoList = new app.TodoList();
 // Views
 
 
-ap.TodoItemView = Backbone.View.extend({
+app.TodoItemView = Backbone.View.extend({
 	
 	tagName : "li",
 	
