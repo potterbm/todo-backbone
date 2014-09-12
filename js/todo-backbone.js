@@ -77,7 +77,7 @@ app.TodoListView = Backbone.View.extend({
 	},
 	
 	createItem : function() {
-		app.todoList.create({title : this.input.val().trim() });
+		app.todoList.create({text : this.input.val().trim() });
 		this.input.val('');
 	},
 	
