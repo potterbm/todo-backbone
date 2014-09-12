@@ -62,6 +62,8 @@ app.TodoListView = Backbone.View.extend({
 	},
 	
 	createOnEnter : function(e) {
+		console.log('createOnEnter');
+		
 		if(e.which !== 13 || !this.input.val().trim()) {
 			return;
 		}
@@ -70,6 +72,8 @@ app.TodoListView = Backbone.View.extend({
 	},
 	
 	createOnClick : function(e) {
+		console.log('createOnClick');
+		
 		e.preventDefault();
 		e.stopPropagation();
 		
@@ -77,11 +81,17 @@ app.TodoListView = Backbone.View.extend({
 	},
 	
 	createItem : function() {
+		console.log('create');
+		
 		app.todoList.create({text : this.input.val().trim() });
 		this.input.val('');
 	},
 	
 	add : function(item) {
+		console.log('add');
+		console.log(this.el);
+		console.log(this.$el);
+		
 		var view = new app.TodoItemView({ model : item });
 		this.$el.append(view.render().el);
 	},
