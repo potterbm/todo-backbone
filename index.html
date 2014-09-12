@@ -21,13 +21,11 @@
 			<input type="text" id="new-item-input" class="new-item-input" placeholder="Add item"><button class="new-item-button"></button>
 		</div>
 		
-		<ul id="list" class="item-list">Loading...</ul>
+		<ul id="list" class="item-list"></ul>
 	
 		<script type="text/template" id="todo-item-template">
-			<div class="view">
-				<input class="toggle" type="checkbox" />
-				<label><%- text %></label>
-			</div>
+			<%- text %>
+			<button class="remove-item-button"></button>
 		</script>
 		
 	</section>

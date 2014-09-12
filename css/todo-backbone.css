@@ -54,6 +54,7 @@ body {
 .new-item-button {
 	background-color: #2BB29D;
 	border: none;
+	border-radius: 1.5%;
 	
 	box-sizing: border-box;
 	display: block;
@@ -111,9 +112,69 @@ body {
 	font-size: 1em;
 	line-height: 3;
 	
+	box-sizing: border-box;
 	display: block;
+	margin: 0;
+	padding: 1em 3em;
 	height: 3em;
 	width: 100%;
 	
 	position: relative;
+}
+
+.item + .item:before {
+	border-top: 1px dotted rgba(0, 0, 0, 0.1);
+	
+	content: "";
+	
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 0;
+	width: 50%;
+	
+	position: absolute;
+	top: 0;
+	left: 25%;
+}
+
+.remove-item-button {
+	background-color: #2BB29D;
+	border: none;
+	
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 3em;
+	width: 3em;
+	
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.remove-item-button:before,
+.remove-item-button:after
+{
+	background-color: #ffffff;
+	border-radius: 1.5%;
+	
+	content: "";
+	
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 6%;
+	width: 60%;
+	
+	position: absolute;
+	top: 47%;
+	left: 20%;
+	
+	transform: rotateZ(45deg);
+}
+
+.remove-item-button:after {
+	transform: rotateZ(135deg);
 }
