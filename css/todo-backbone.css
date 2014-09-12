@@ -72,22 +72,17 @@ body {
 {
 	background-color: #ffffff;
 	
+	content: "";
+	
 	display: block;
 	margin: 0;
 	padding: 0;
 	height: 6%;
 	width: 60%;
 	
-	
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	
-	-webkit-transform-origin: 50% 50%;
-	-moz-transform-origin: 50% 50%;
-	-ms-transform-origin: 50% 50%;
-	-o-transform-origin: 50% 50%;
-	transform-origin: 50% 50%;
 	
 	-webkit-transform:  translate(-50%, -50%);
 	-ms-transform:  translate(-50%, -50%);
