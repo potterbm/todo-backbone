@@ -83,18 +83,11 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	
-	-webkit-transform: translateY(-50%) translateX(-50%);
-	-ms-transform: translateY(-50%) translateX(-50%);
-	-o-transform: translateY(-50%) translateX(-50%);
-	transform: translateY(-50%) translateX(-50%);
+	margin-left: -30%;
 }
 
 .new-item-button:after {
-	-webkit-transform: rotateZ(90deg) translateY(-50%) translateX(-50%);
-	-ms-transform: rotateZ(90deg) translateY(-50%) translateX(-50%);
-	-o-transform: rotateZ(90deg) translateY(-50%) translateX(-50%);
-	transform: rotateZ(90deg) translateY(-50%) translateX(-50%);
+	transform: rotateZ(90deg);
 }
 
 
