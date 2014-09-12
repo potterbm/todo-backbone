@@ -115,7 +115,7 @@ body {
 	box-sizing: border-box;
 	display: block;
 	margin: 1em 0;
-	padding: 0 3em;
+	padding: 0 3.25em;
 	height: 3em;
 	width: 100%;
 	
@@ -144,6 +144,40 @@ body {
 	position: absolute;
 	top: 0;
 	left: 25%;
+}
+
+.item:before {
+	background-color: #FF3F40;
+	
+	content: "";
+	
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 3em;
+	width: 3em;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.item:after {
+	background-color: transparent;
+	border: 6% solid #ffffff;
+	border-radius: 50%;
+	
+	content: "";
+	
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 1.5em;
+	width: 1.5em;
+	
+	position: absolute;
+	top: 1.5em;
+	left: 1.5em;
 }
 
 .remove-item-button {
