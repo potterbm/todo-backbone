@@ -81,9 +81,8 @@ body {
 	width: 60%;
 	
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -30%;
+	top: 47%;
+	left: 20%;
 }
 
 .new-item-button:after {
