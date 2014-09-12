@@ -89,10 +89,6 @@ app.TodoListView = Backbone.View.extend({
 	},
 	
 	add : function(item) {
-		console.log('add');
-		console.log(this.el);
-		console.log(this.$el);
-		
 		var view = new app.TodoItemView({ model : item });
 		this.$el.append(view.render().el);
 	},
@@ -107,3 +103,5 @@ app.TodoListView = Backbone.View.extend({
 		
 	}
 });
+
+var listView = new app.TodoListView();
