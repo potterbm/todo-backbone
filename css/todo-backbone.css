@@ -164,8 +164,8 @@ body {
 
 .item:after {
 	background-color: transparent;
-	border: 6% solid #ffffff;
-	border-radius: 50%;
+	border: .15em solid #ffffff;
+	border-radius: .75em;
 	
 	content: "";
 	
@@ -176,8 +176,8 @@ body {
 	width: 1.5em;
 	
 	position: absolute;
-	top: 1.5em;
-	left: 1.5em;
+	top: .75em;
+	left: .75em;
 }
 
 .remove-item-button {
