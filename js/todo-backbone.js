@@ -48,7 +48,7 @@ app.TodoListView = Backbone.View.extend({
 	
 	initialize : function() {
 		console.log(this);
-		this.input = this.$("#new-item-input");
+		this.input = $("#new-item-input");
 		
 		// Event Bindings
 		app.todoList.on("add", this.add, this);
