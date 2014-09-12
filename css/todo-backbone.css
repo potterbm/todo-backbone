@@ -45,15 +45,17 @@ body {
 	box-sizing: border-box;
 	display: block;
 	margin: 0;
-	padding: 0;
-	padding-right: ;
+	padding: 0 1em;
+	padding-right: 3em;
 	height: 3em;
 	width: 100%;
 }
 
 .new-item-button {
 	background-color: #2BB29D;
+	border: none;
 	
+	box-sizing: border-box;
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -73,8 +75,8 @@ body {
 	display: block;
 	margin: 0;
 	padding: 0;
-	height: 5%;
-	width: 75%;
+	height: 6%;
+	width: 60%;
 	
 	
 	position: absolute;
@@ -94,10 +96,10 @@ body {
 }
 
 .new-item-button:after {
-	-webkit-transform: rotateZ(90) translate(-50%, -50%);
-	-ms-transform: rotateZ(90) translate(-50%, -50%);
-	-o-transform: rotateZ(90) translate(-50%, -50%);
-	transform: rotateZ(90) translate(-50%, -50%);
+	-webkit-transform: rotateZ(90deg) translate(-50%, -50%);
+	-ms-transform: rotateZ(90deg) translate(-50%, -50%);
+	-o-transform: rotateZ(90deg) translate(-50%, -50%);
+	transform: rotateZ(90deg) translate(-50%, -50%);
 }
 
 
