@@ -12,7 +12,7 @@
 */
 
 body {
-	background-color: #eeeeee;
+	background-color: #dddddd;
 	color: #675B57;
 	
 	font-family: 'Lato', sans-serif;
@@ -149,7 +149,7 @@ body {
 }
 
 .item:before {
-	background-color: #DB4B64;
+	background-color: #73BEC0;
 	
 	content: "";
 	
@@ -184,7 +184,7 @@ body {
 }
 
 .remove-item-button {
-	background-color: #73BEC0;
+	background-color: #DB4B64;
 	border: none;
 	outline: none;
 	
