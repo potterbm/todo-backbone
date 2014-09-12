@@ -21,11 +21,87 @@ body {
 }
 
 
+.container {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	max-width: 40em;
+	
+	position: relative;
+}
+
+.container:first-of-type {
+	margin-top: 10em;
+}
+
+.new-item-input {
+	background-color: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	
+	font-size: 1em;
+	line-height: 3;
+	
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	padding: 0;
+	padding-right: ;
+	height: 3em;
+	width: 100%;
+}
+
+.new-item-button {
+	background-color: #2BB29D;
+	
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 3em;
+	width: 3em;
+	
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.new-item-button:before,
+.new-item-button:after
+{
+	background-color: #ffffff;
+	
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 5%;
+	width: 75%;
+	
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	
+	-webkit-transform:  translate(-50%, -50%);
+	-ms-transform:  translate(-50%, -50%);
+	-o-transform:  translate(-50%, -50%);
+	transform:  translate(-50%, -50%);
+}
+
+.new-item-button:after {
+	-webkit-transform: rotateZ(90) translate(-50%, -50%);
+	-ms-transform: rotateZ(90) translate(-50%, -50%);
+	-o-transform: rotateZ(90) translate(-50%, -50%);
+	transform: rotateZ(90) translate(-50%, -50%);
+}
 
 
-
-
-.list-container {
+.item-list {
 	background-color: #ffffff;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.4);
@@ -40,7 +116,7 @@ body {
 	max-width: 60em;
 }
 
-.list-item {
+.item {
 	background-color: #ffffff;
 	
 	font-size: 1em;
