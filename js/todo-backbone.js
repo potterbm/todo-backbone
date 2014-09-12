@@ -47,7 +47,7 @@ app.ListView = Backbone.View.extend({
 	el : "#list",
 	
 	initialize : function() {
-		this.input = this.$("#new-item");
+		this.input = this.$("#new-item-input");
 		
 		// Event Bindings
 		app.todoList.on("add", this.addOne, this);
@@ -57,7 +57,7 @@ app.ListView = Backbone.View.extend({
 	},
 	
 	events : {
-		'keypress #new-item' : 'createTodoOnEnter'
+		'keypress #new-item-input' : 'createTodoOnEnter'
 	},
 	
 	createTodoOnEnter : function(e) {
