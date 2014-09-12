@@ -11,6 +11,7 @@ window.Item = Backbone.Model.extend({
 });
 
 window.List = Backbone.Collection.extend({
+	localStorage : new Backbone.LocalStorage("List"),
 	model : Item,
 	url : "../api/lists"
 });
