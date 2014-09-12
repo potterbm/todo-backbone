@@ -109,17 +109,25 @@ body {
 .item {
 	background-color: #ffffff;
 	
-	font-size: 1em;
+	font-size: 1.4em;
 	line-height: 3;
 	
 	box-sizing: border-box;
 	display: block;
-	margin: 0;
-	padding: 1em 3em;
+	margin: 1em 0;
+	padding: 0 3em;
 	height: 3em;
 	width: 100%;
 	
 	position: relative;
+}
+
+.item:first-of-type {
+	margin-top: 0;
+}
+
+.item:last-of-type {
+	margin-bottom: 0;
 }
 
 .item + .item:before {
