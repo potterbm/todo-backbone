@@ -57,7 +57,7 @@ app.TodoListView = Backbone.View.extend({
 	},
 	
 	events : {
-		'keypress #new-item-input' : 'createOnEnter'
+		'keypress #new-item-input' : 'createOnEnter',
 		'click #new-item-button' : 'createOnClick'
 	},
 	
