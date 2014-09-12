@@ -1,16 +1,21 @@
 
+var app = {};
 
 // Models
-window.Item = Backbone.Model.extend({
+app.Item = Backbone.Model.extend({
 	defaults : {
+		text : '',
 		completed : false
 	},
+	
+	localStorage : new Store("todo-item"),
+	
 	complete : function() {
 		this.completed = true;
 	}
 });
 
-window.List = Backbone.Collection.extend({
+app.List = Backbone.Collection.extend({
 	model : Item,
 	url : "../api/lists"
 });
@@ -20,7 +25,7 @@ window.List = Backbone.Collection.extend({
 
 // Views
 
-window.AppView = Backbone.View.extend({
+app.AppView = Backbone.View.extend({
 	el : "#list",
 	
 	initialize : function() {
@@ -31,5 +36,3 @@ window.AppView = Backbone.View.extend({
 		this.$el.html("Hello world");
 	}
 });
-
-var appView = new AppView();
