@@ -81,7 +81,7 @@ todo.ListView = Backbone.View.extend({
 		todo.collection.bind("add", this.add);
 		todo.collection.bind("reset", this.reset);
 		
-		this.fetch();
+		todo.collection.fetch();
 	},
 	
 	events : {
