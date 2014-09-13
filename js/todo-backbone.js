@@ -8,11 +8,7 @@ todo.Item = Backbone.Model.extend({
 		completed : false
 	},
 	
-	idAttribute : 'data-id',
-	
-	complete : function() {
-		this.completed = true;
-	}
+	idAttribute : 'data-id'
 });
 
 
@@ -39,7 +35,6 @@ todo.ItemView = Backbone.View.extend({
 	},
 	
 	initialize : function() {
-		console.log(this.model.get("completed"));
 		if(this.model.get("completed")) {
 			this.$el.addClass("completed");
 		}
@@ -111,7 +106,6 @@ todo.ListView = Backbone.View.extend({
 	},
 	
 	render : function() {
-		this.$el.html("Hello world");
 	}
 });
 
