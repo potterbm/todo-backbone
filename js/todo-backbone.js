@@ -8,6 +8,8 @@ todo.Item = Backbone.Model.extend({
 		completed : false
 	},
 	
+	idAttribute : 'data-id',
+	
 	complete : function() {
 		this.completed = true;
 	}
@@ -24,8 +26,8 @@ todo.collection = new todo.List();
 
 
 
-// Views
 
+// Views
 
 todo.ItemView = Backbone.View.extend({
 	
@@ -33,7 +35,30 @@ todo.ItemView = Backbone.View.extend({
 	
 	className : "item",
 	
+	events : {
+		'click' : 'toggleCompleted',
+		'click .remove-item-button' : 'delete'
+	},
+	
+	initialize : function() {
+		if(this.model.get("completed")) {
+			this.$el.addClass("completed");
+		}
+	},
+	
+	delete : function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		
+		
+	},
+	
 	template : _.template($("#todo-item-template").html()),
+	
+	toggleCompleted : function(e) {
+		this.model.completed = !this.model.completed;
+		this.$el.toggleClass("completed");
+	},
 	
 	render : function() {
 		this.$el.html(this.template(this.model.toJSON()));
