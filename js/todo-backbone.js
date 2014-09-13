@@ -30,7 +30,8 @@ todo.ItemView = Backbone.View.extend({
 	className : "item",
 	
 	events : {
-		'click' : 'toggleCompleted'
+		'click' : 'toggleCompleted',
+		'click .remove-item-button' : 'delete'
 	},
 	
 	initialize : function() {
