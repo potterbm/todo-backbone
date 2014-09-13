@@ -41,6 +41,7 @@ todo.ItemView = Backbone.View.extend({
 	},
 	
 	initialize : function() {
+		console.log(this.model.get("completed"));
 		if(this.model.get("completed")) {
 			this.$el.addClass("completed");
 		}
@@ -56,7 +57,7 @@ todo.ItemView = Backbone.View.extend({
 	template : _.template($("#todo-item-template").html()),
 	
 	toggleCompleted : function(e) {
-		this.model.completed = !this.model.completed;
+		this.model.set("completed") = !this.model.get("completed");
 		this.$el.toggleClass("completed");
 	},
 	
