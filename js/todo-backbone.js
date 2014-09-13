@@ -1,8 +1,8 @@
 
-var app = {};
+var todo = {};
 
 // Models
-app.TodoItem = Backbone.Model.extend({
+todo.Item = Backbone.Model.extend({
 	defaults : {
 		text : '',
 		completed : false
@@ -14,20 +14,20 @@ app.TodoItem = Backbone.Model.extend({
 });
 
 
-app.TodoList = Backbone.Collection.extend({
-	model : app.TodoItem,
+todo.List = Backbone.Collection.extend({
+	model : todo.Item,
 	
 	localStorage : new Store("todo-list")
 });
 
-app.todoList = new app.TodoList();
+todo.collection = new todo.List();
 
 
 
 // Views
 
 
-app.TodoItemView = Backbone.View.extend({
+todo.ItemView = Backbone.View.extend({
 	
 	tagName : "li",
 	
@@ -44,23 +44,22 @@ app.TodoItemView = Backbone.View.extend({
 
 
 
-app.TodoListView = Backbone.View.extend({
+todo.ListView = Backbone.View.extend({
 	el : "#list",
 	
 	initialize : function() {
-		console.log('TodoListView');
+		console.log('ListView');
 		this.input = $("#new-item-input");
 		
 		// Event Bindings
-		this.collection.bind("add", this.add);
-		this.collection.bind("reset", this.reset);
+		todo.collection.bind("add", this.add);
+		todo.collection.bind("reset", this.reset);
 		
 		this.fetch();
 	},
 	
 	events : {
-		'keypress #new-item-input' : 'createOnEnter',
-		'click #new-item-button' : 'createOnClick'
+		'keypress #new-item-input' : 'createOnEnter'
 	},
 	
 	createOnEnter : function(e) {
@@ -70,39 +69,23 @@ app.TodoListView = Backbone.View.extend({
 			return;
 		}
 		
-		this.createItem();
-	},
-	
-	createOnClick : function(e) {
-		console.log('createOnClick');
-		
-		e.preventDefault();
-		e.stopPropagation();
-		
-		this.createItem();
-	},
-	
-	createItem : function() {
-		console.log('create');
-		
-		app.todoList.create({text : this.input.val().trim() });
+		todo.collection.create({text : this.input.val().trim() });
 		this.input.val('');
 	},
 	
 	add : function(item) {
-		var view = new app.TodoItemView({ model : item });
+		var view = new todo.ItemView({ model : item });
 		this.$el.append(view.render().el);
 	},
 	
 	reset : function() {
 		this.$el.html('');
-		app.todoList.each(this.addOne, this);
+		todo.collection.each(this.addOne, this);
 	},
 	
 	render : function() {
 		this.$el.html("Hello world");
-		
 	}
 });
 
-app.todoListView = new app.TodoListView();
+todo.app = new todo.ListView();
