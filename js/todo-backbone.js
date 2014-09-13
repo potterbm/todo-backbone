@@ -22,8 +22,6 @@ todo.List = Backbone.Collection.extend({
 	localStorage : new Store("todo-list")
 });
 
-todo.collection = new todo.List();
-
 
 
 
@@ -78,10 +76,10 @@ todo.ListView = Backbone.View.extend({
 		this.input = $("#new-item-input");
 		
 		// Event Bindings
-		todo.collection.bind("add", this.add);
-		todo.collection.bind("reset", this.reset);
+		this.collection.bind("add", this.add);
+		this.collection.bind("reset", this.reset);
 		
-		todo.collection.fetch();
+		this.collection.fetch();
 	},
 	
 	events : {
@@ -116,4 +114,11 @@ todo.ListView = Backbone.View.extend({
 	}
 });
 
-todo.app = new todo.ListView();
+
+
+$(document).ready(function(e) {
+	
+todo.collection = new todo.List();
+	todo.app = new todo.ListView();
+	
+});
