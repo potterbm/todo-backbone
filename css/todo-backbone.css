@@ -36,11 +36,11 @@ body {
 }
 
 .new-item-input {
-	background-color: #F2F1F1;
-	border: none;
+	background-color: rgba(255, 255, 255, 0.3);
+	border: .125em solid rgba(255, 255, 255, 0.3);
 	outline: none;
 	
-	font-size: 1em;
+	font-size: 1.4em;
 	line-height: 3;
 	
 	box-sizing: border-box;
@@ -55,10 +55,9 @@ body {
 .new-item-button {
 	background-color: #73BEC0;
 	border: none;
-	border-radius: 1.5%;
 	outline: none;
 	
-	font-size: 1em;
+	font-size: 1.4em;
 	
 	box-sizing: border-box;
 	display: block;
@@ -76,6 +75,7 @@ body {
 .new-item-button:after
 {
 	background-color: #F2F1F1;
+	border-radius: 1.5%;
 	
 	content: "";
 	

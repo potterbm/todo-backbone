@@ -35,12 +35,17 @@ app.TodoItemView = Backbone.View.extend({
 	
 	template : _.template($("#todo-item-template").html()),
 	
+	initialize : function() {
+		
+	};
+	
 	render : function() {
 		this.$el.html(this.template(this.model.toJSON()));
 		return this;
 	}
 	
 });
+
 
 
 app.TodoListView = Backbone.View.extend({
@@ -104,4 +109,4 @@ app.TodoListView = Backbone.View.extend({
 	}
 });
 
-var listView = new app.TodoListView();
+app.todoListView = new app.TodoListView();
