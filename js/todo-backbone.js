@@ -101,12 +101,14 @@ todo.ListView = Backbone.View.extend({
 	
 	add : function(item) {
 		var view = new todo.ItemView({ model : item });
+		console.log(this.$el);
+		console.log(this.el);
 		this.$el.append(view.render().el);
 	},
 	
 	reset : function() {
-		this.$el.html('');
-		todo.collection.each(this.addOne, this);
+		this.$el.find(".item").remove();
+		todo.collection.each(this.add, this);
 	},
 	
 	render : function() {
