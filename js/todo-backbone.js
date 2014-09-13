@@ -6,9 +6,7 @@ todo.Item = Backbone.Model.extend({
 	defaults : {
 		text : '',
 		completed : false
-	},
-	
-	idAttribute : 'data-id'
+	}
 });
 
 
