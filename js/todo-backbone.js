@@ -49,7 +49,7 @@ todo.ItemView = Backbone.View.extend({
 		e.preventDefault();
 		e.stopPropagation();
 		
-		
+		this.remove();
 	},
 	
 	template : _.template($("#todo-item-template").html()),
@@ -74,6 +74,7 @@ todo.ListView = Backbone.View.extend({
 	initialize : function() {
 		console.log('ListView');
 		this.input = $("#new-item-input");
+		this.collection = new todo.List();
 		
 		// Event Bindings
 		this.collection.bind("add", this.add);
@@ -118,7 +119,6 @@ todo.ListView = Backbone.View.extend({
 
 $(document).ready(function(e) {
 	
-todo.collection = new todo.List();
 	todo.app = new todo.ListView();
 	
 });
