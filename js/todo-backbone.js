@@ -67,7 +67,6 @@ todo.ListView = Backbone.View.extend({
 	el : "#list",
 	
 	initialize : function() {
-		console.log('ListView');
 		this.input = $("#new-item-input");
 		this.collection = new todo.List();
 		
@@ -89,11 +88,14 @@ todo.ListView = Backbone.View.extend({
 			return;
 		}
 		
-		todo.collection.create({text : this.input.val().trim() });
+		this.collection.create({text : this.input.val().trim() });
 		this.input.val('');
 	},
 	
 	add : function(item) {
+		console.log(item);
+		console.log(this);
+		
 		var view = new todo.ItemView({ model : item });
 		console.log(this.$el);
 		console.log(this.el);
@@ -101,8 +103,7 @@ todo.ListView = Backbone.View.extend({
 	},
 	
 	reset : function() {
-		this.$el.find(".item").remove();
-		todo.collection.each(this.add, this);
+		this.collection.each(this.add, this);
 	},
 	
 	render : function() {
