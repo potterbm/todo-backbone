@@ -71,8 +71,8 @@ todo.ListView = Backbone.View.extend({
 		this.collection = new todo.List();
 		
 		// Event Bindings
-		this.collection.bind("add", this.add);
-		this.collection.bind("reset", this.reset);
+		this.collection.bind("add", this.add, this);
+		this.collection.bind("reset", this.reset, this);
 		
 		this.collection.fetch();
 	},
@@ -93,13 +93,7 @@ todo.ListView = Backbone.View.extend({
 	},
 	
 	add : function(item) {
-		console.log(item);
-		console.log(this);
-		
-		var view = new todo.ItemView({ model : item });
-		console.log(this.$el);
-		console.log(this.el);
-		this.$el.append(view.render().el);
+		this.$el.append(new todo.ItemView({ model : item }).render().el);
 	},
 	
 	reset : function() {
