@@ -35,10 +35,6 @@ app.TodoItemView = Backbone.View.extend({
 	
 	template : _.template($("#todo-item-template").html()),
 	
-	initialize : function() {
-		
-	};
-	
 	render : function() {
 		this.$el.html(this.template(this.model.toJSON()));
 		return this;
@@ -52,14 +48,14 @@ app.TodoListView = Backbone.View.extend({
 	el : "#list",
 	
 	initialize : function() {
-		console.log(this);
+		console.log('TodoListView');
 		this.input = $("#new-item-input");
 		
 		// Event Bindings
-		app.todoList.on("add", this.add, this);
-		app.todoList.on("reset", this.reset, this);
+		this.on("add", this.add, this);
+		this.on("reset", this.reset, this);
 		
-		app.todoList.fetch();
+		this.fetch();
 	},
 	
 	events : {
