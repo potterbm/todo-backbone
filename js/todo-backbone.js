@@ -44,6 +44,8 @@ todo.ItemView = Backbone.View.extend({
 		e.preventDefault();
 		e.stopPropagation();
 		
+		console.log(todo.app.collection);
+		console.log(this.model);
 		todo.app.collection.remove(this.model);
 		this.model.destroy();
 		this.remove();
