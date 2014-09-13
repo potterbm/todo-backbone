@@ -30,8 +30,7 @@ todo.ItemView = Backbone.View.extend({
 	className : "item",
 	
 	events : {
-		'click' : 'toggleCompleted',
-		'click .remove-item-button' : 'delete'
+		'click' : 'toggleCompleted'
 	},
 	
 	initialize : function() {
@@ -44,6 +43,7 @@ todo.ItemView = Backbone.View.extend({
 		e.preventDefault();
 		e.stopPropagation();
 		
+		this.model.destroy();
 		this.remove();
 	},
 	
