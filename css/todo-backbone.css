@@ -119,6 +119,7 @@ body {
 	
 	font-size: 1.4em;
 	line-height: 3;
+	font-weight: 700;
 	
 	box-sizing: border-box;
 	display: block;
@@ -142,6 +143,8 @@ body {
 
 .item.completed {
 	color: #bbbbbb;
+	
+	font-weight: 300;
 }
 
 .item:before {
