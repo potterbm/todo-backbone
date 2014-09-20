@@ -43,18 +43,17 @@ body {
 
 .new-item-input {
 	background-color: rgba(255, 255, 255, 0.3);
-	border: .125em solid rgba(255, 255, 255, 0.3);
+	border: none;
 	outline: none;
 	
 	font-size: 1.4em;
-	line-height: 3;
+	line-height: 1;
 	font-weight: 300;
 	
 	box-sizing: border-box;
 	display: block;
 	margin: 0;
-	padding: 0 1em;
-	padding-right: 3em;
+	padding: 1em;
 	height: 3em;
 	width: 100%;
 }
@@ -103,8 +102,6 @@ body {
 
 
 .item-list {
-	background-color: #F2F1F1;
-	
 	font-size: 1em;
 	
 	display: block;
@@ -166,7 +163,7 @@ body {
 
 .item:after {
 	background-color: transparent;
-	border: .15em solid #73BEC0;
+	border: .1em solid #73BEC0;
 	border-radius: .75em;
 	
 	content: "";
@@ -175,12 +172,12 @@ body {
 	display: block;
 	margin: 0;
 	padding: 0;
-	height: 1.5em;
-	width: 1.5em;
+	height: 1em;
+	width: 1em;
 	
 	position: absolute;
-	top: .75em;
-	left: .75em;
+	top: 1em;
+	left: 1em;
 	
 	transition: background-color 0.3s ease-in-out;
 }
